@@ -9,7 +9,7 @@ internal class Program
         bool flag = true;
         while (flag)
         {
-            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Exit\nEnter your option to execute: ");
+            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Exit\nEnter your option to execute: ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -34,6 +34,20 @@ internal class Program
                     }
                     break;
                 case 3:
+                    PrimeNumber prime = new PrimeNumber();
+                    Console.Write("Enter a number to check if it's a prime number: ");
+                    int primeInput = Convert.ToInt32(Console.ReadLine());
+                    bool isPrime = prime.IsPrimeNumber(primeInput);
+                    if (isPrime)
+                    {
+                        Console.WriteLine(primeInput + " is a prime number.");
+                    }
+                    else
+                    {
+                        Console.WriteLine(primeInput + " is not a prime number.");
+                    }
+                    break;
+                case 4:
                     flag = false;
                     break;
                 default:
